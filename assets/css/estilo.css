@@ -1,0 +1,229 @@
+/* General */
+@font-face{
+	font-family: "Roboto Slab";
+	src: url('RobotoSlab-Regular.ttf');
+}
+@font-face{
+	font-family: "Roboto Slab Thin";
+	src: url('RobotoSlab-Thin.ttf');
+}
+@font-face{
+	font-family: "Roboto Slab Light";
+	src: url('RobotoSlab-Light.ttf');
+}
+@font-face{
+	font-family: "Roboto Slab Bold";
+	src: url('RobotoSlab-Bold.ttf');
+}
+*{
+	margin: 0;
+	padding: 0;
+}
+a, a:link{
+	text-decoration: none;
+	color: #333;
+	font-weight: bold;
+}
+article a{
+	font-family: "Roboto Slab Bold" !important;
+}
+h1{
+	font-size: 1.6em;
+}
+h2{
+	font-size: 1.3em;
+}
+h3{
+	font-size: 1.2em;
+}
+h1,h2,h3,h4,h5{
+	text-align: left;
+	margin: 10px 0px;
+}
+blockquote{
+	margin: 15px 0px 15px 30px;
+	padding: 10px;
+	font-family: "Roboto Slab";
+	background: #EEE;
+	border-radius: 5px;
+	text-align: left !important;
+}
+blockquote b{
+	font-weight: normal;
+	color: #BBB;
+}
+table{
+	margin: 10px;
+}
+th{
+	border-bottom: 1px solid #000;
+	text-align: left;
+}
+th, td{
+	padding: 5px 10px;
+	text-align: left;
+}
+
+/* Structure */
+#page{
+	position: relative;
+	margin: 0px auto 20px;
+	padding: 0px 10px;
+	width: 90%;
+}
+article{
+	font-family: "Roboto Slab";
+	font-size: 18px;
+	padding: 20px;
+}
+header{
+	text-align: center;
+	color: #CCC;
+	padding: 10px 0px;
+	font-family: "Roboto Slab Thin";
+	border-bottom: 1px solid #CCC;
+}
+article{
+	margin: 10px 0px;
+	text-align: justify;
+}
+footer{
+	position: relative;
+	width: 90%;
+	padding: 10px;
+	margin: 20px auto;
+	text-align: center;
+	font-size: small;
+	font-family: "Roboto Slab";
+	color: #AAA;
+	background: #EEE;
+	border-radius: 5px;
+}
+footer a, footer a:visited{
+	font-size: small;
+	font-family: Roboto Slab Bold !important;
+	font-weight: normal !important;
+	color: #AAA !important;
+}
+article ol li{
+	margin: 10px 0px;
+	padding: 5px 0px !important;
+}
+ol, ul{
+	text-align: left;
+	padding-left: 20px;
+	margin-left: 20px;
+}
+nav{
+	text-align: center;
+	margin: 10px 0px;
+}
+nav a{
+	margin: 0px 10px;
+}
+
+/* Menu */
+#index h2{
+	cursor: pointer;
+}
+
+.menu-fixed{
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	z-index: 999;
+}
+.menu-relative{
+	position: relative;
+	margin: 10px auto;
+	padding: 10px 0px;
+	width: 90%;
+	text-align: center;
+}
+.menu a{
+	display: inline-block;
+	height: 28px;
+	width: 30px;
+	background: rgba(0,0,0,0.75);
+	padding-top: 4px; 
+	margin: 2px;
+	border-radius: 3px;
+	color: #FFF;
+	text-align: center;
+	font-family: Tahoma, Verdana, Arial;
+	font-size: 18px;
+	font-weight: bold;
+	text-shadow: 2px 2px rgba(0,0,0,0.2);
+	cursor: pointer;
+}
+
+/* Classes */
+.index li{
+	padding: 10px;
+}
+.verse-txt{
+	margin-right: 5px;
+	padding: 2px;
+	background: #EEE;
+}
+a.verse{
+	color: #555;
+	cursor: pointer;
+	font-weight: normal !important;
+}
+
+/* Config */
+#config p{
+	margin: 10px 0px;
+}
+.label{
+	display: inline-block;
+	width: 50%;
+}
+.tahoma{
+	font-family: Tahoma !important;
+}
+.times{
+	font-family: Times, Times New Roman !important;
+}
+.roboto{
+	font-family: Roboto Slab !important;
+}
+.roboto li a{
+	font-family: Roboto Slab Bold !important;
+}
+.courier{
+	font-family: Courier New !important;
+}
+.small{
+	font-size: 12px !important;
+}
+.normal{
+	font-size: 18px !important;
+}
+.big{
+	font-size: 28px !important;
+}
+.center{
+	text-align: center;
+}
+
+input[type=button]{
+	cursor: pointer;
+	padding: 10px 15px;
+	font-size: normal;
+	font-family: Tahoma;
+	font-weight: bold;
+	color: #FFF;
+	background: #333;
+	border: none;
+	border-radius: 5px;
+}
+select{
+	float: right;
+	font-size: 14px;
+}
+#config p{
+	clear: both;
+	margin-top: 20px;
+}
