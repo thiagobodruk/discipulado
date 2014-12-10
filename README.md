@@ -38,6 +38,10 @@ To-Do
 * Implementar framework de navegação baseado em web
 * Traduzir o aplicativo
 
+Licença
+-----
+O conteúdo deste projeto está licenciado sob [Creative Commons 3.0 BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/3.0/br).
+
 Versões
 -----
 * [Android](https://play.google.com/store/apps/details?id=br.com.bodruk)
