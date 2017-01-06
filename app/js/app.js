@@ -1,32 +1,28 @@
-$(function(){
-	lang = getLang();
-	setMenu("#nav-mobile");
+var App = function(){
+	return false;
+}
+
+$.extend(App.prototype, {
+	init : function(){
+		this.menu();
+		$.mobile.defaultPageTransition = "none";
+	},
+	menu : function(){
+		$("#menu").panel();
+		$(".menu").click(function(){
+			$("#menu").panel("toggle");
+		});
+		$("#menu ul li").click(function(){
+			$("#menu ul li").removeClass("active");
+			$(this).addClass("active");
+		});
+	}
 });
 
-var preload = function(){
-	
-}
+$(function(){
+	var app = new App();
+	app.init();	
+})
 
-var setLang = function(l){
-	localStorage.setItem("lang", l);
-}
 
-var getLang = function(){
-	var myLang = localStorage.getItem("lang");
-	var l = (myLang) ? myLang : "pt";
-	return l;	
-}
 
-var setMenu = function(menu){
-	$(".button-collapse").sideNav();
-	$(menu + " a").click(function(){
-		loadContent($(this).attr("data-book"));
-	});
-}
-
-var loadContent = function(book){
-	var path = "xml/" + lang + ".xml book#" + book;
-	console.log(path);
-	$("#main h2").load(path + " name");
-	$("#main article").load(path + " content");
-}

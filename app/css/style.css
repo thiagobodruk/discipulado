@@ -1,0 +1,172 @@
+/* General */
+.left{
+	float: left;
+}
+.right{
+	float: right;
+}
+.clear{
+	clear: both;
+}
+
+/* Header */
+header{
+	background: #F44336 !important;
+	color: #FFF !important;
+	text-shadow: none !important;
+	border: none !important;
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.25);
+}
+header h1{
+	display: inline-block !important;
+	position: relative;
+	left: 40px !important;
+	text-align: left !important;
+	margin: 20px 0px 14px 20px !important;
+	padding: 0 !important;
+}
+header .left, header .menu{
+	left: 20px;
+}
+header .right{
+	right: 20px;
+}
+
+/* Menu */
+#menu{
+	background: #FFF;
+}
+#menu .ui-panel-inner{
+	padding: 0 !important;
+}
+#menu ul{
+	padding: 0;
+	list-style: none;
+}
+#menu ul li{
+	padding: 10px 20px 14px;
+}
+#menu ul li.active{
+	background: #EEE;
+}
+#menu ul li.active .icon{
+	background: #000 !important;
+}
+#menu a, #menu a:visited{
+	color: #000 !important;
+	text-decoration: none;
+}
+#menu .icon{
+	margin-right: 10px;
+	top: 5px;
+	background-color: #AAA !important;
+}
+.ui-panel-dismiss{
+	animation: menu 1s ease-in;
+	animation-iteration-count: 1;
+	background: rgba(0,0,0,0.15);
+}
+@keyframes menu{
+	from{
+		background: none;
+	}
+	to{
+		background: rgba(0,0,0,0.15);
+	}
+}
+#menu .cover{
+	position: relative;
+	height: 200px;
+	background: linear-gradient(
+      rgba(0, 0, 0, 0.6), 
+      rgba(0, 0, 0, 0.6)
+    ), url(../img/bible-hand.jpeg) center center no-repeat;
+	background-size: auto 200px;
+}
+#menu .cover:before{
+	position: relative;
+	display: inline-block;
+	height: 40%;
+	width: 40%;
+	top: 25%;
+	transform: translateY(-50%);
+	left: 50%;
+	transform: translateX(-50%);
+	background: url(../img/logo.png) center center no-repeat;
+	background-size: auto 100%;
+	content: "";
+}
+#menu .cover:after{
+	position: absolute;
+	font-size: 1.2em;
+	color: #FFF;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 35px;
+	content: "Discipulado";
+}
+
+/* Ícones */
+.menu, header .icon{
+	position: absolute !important;
+	transform: translateY(-50%);
+	background-color: #FFF !important;
+}
+.menu, .icon{
+	position: relative;
+	display: inline-block;
+	top: 50%;
+	height: 24px;
+	width: 24px;
+	background-color: #000;
+}
+.menu{
+	-webkit-mask: url(../img/ic-menu.svg);
+	mask: url(../img/ic-menu.svg);
+	-webkit-mask-size: cover;
+	mask-size: cover;
+	height: 14px !important;
+	width: 18px !important;
+}
+.icon.refresh{
+	-webkit-mask: url(../img/ic-reload.svg);
+	mask: url(../img/ic-reload.svg);
+}
+.icon.book{
+	-webkit-mask: url(../img/ic-book.svg);
+	mask: url(../img/ic-book.svg);
+}
+.icon.build{
+	-webkit-mask: url(../img/ic-build.svg);
+	mask: url(../img/ic-build.svg);
+}
+.icon.help{
+	-webkit-mask: url(../img/ic-help.svg);
+	mask: url(../img/ic-help.svg);
+}
+.icon.offline-pin{
+	-webkit-mask: url(../img/ic-offline-pin.svg);
+	mask: url(../img/ic-offline-pin.svg);
+}
+.icon.download{
+	-webkit-mask: url(../img/ic-download.svg);
+	mask: url(../img/ic-download.svg);
+}
+.icon.done{
+	-webkit-mask: url(../img/ic-done.svg);
+	mask: url(../img/ic-done.svg);
+}
+.icon.black{
+	background-color: #000;
+}
+
+/* Body */
+.ui-content{
+	position: relative;
+	top: 10px;
+	padding: 1.5em !important;
+}
+.ui-page{
+	background: #FFF !important;
+}
+

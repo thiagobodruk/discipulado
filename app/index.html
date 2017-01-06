@@ -3,30 +3,59 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection" />
-		<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-		<script type="text/javascript" src="js/materialize.min.js"></script>
-		<script type="text/javascript" src="js/app.js"></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery-mobile.min.js"></script>
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/jquery-mobile.min.css">
 		<title>Discipulado</title>
 	</head>
 	<body>
-		<nav>
-			<div class="nav-wrapper">
-				<a href="#" class="brand-logo">Discipulado</a>
-					<ul id="nav-mobile" class="right side-nav">
-						<li><a href="#" data-book="book-1">A vida e a obra de Jesus</a></li>
-						<li><a href="#" data-book="book-2">O propósito eterno de Deus</a></li>
-					</ul>
-				<a class="button-collapse" href="#" data-activates="nav-mobile"><i class="mdi-navigation-menu"></i></a>
-			</div>
-		</nav>
-		<div id="main" class="container">
-			<h2>Hello World</h2>
-			<article>Lorem ipsum</article>
+
+		<!-- menu -->
+		<div data-role="panel" id="menu" data-display="overlay" class="ui-panel-closed">
+			<div class="cover"></div>
+			<ul>
+				<li class="active"><a href="#home"><span class="icon book"></span>Minhas Apostilas</a></li>
+				<li><a href="#config"><span class="icon build"></span>Configurações</a></li>
+				<li><a href="#about"><span class="icon help"></span>Sobre</a></li>
+			</ul>
 		</div>
-		<!-- Footer -->
-		<footer>
-			
-		</footer>
+
+		<!-- home -->
+		<div data-role="page" id="home">
+			<header data-role="header" data-position="fixed">
+				<span class="menu"></span>
+				<span class="icon refresh right"></span>
+				<h1>Minhas Apostilas</h1>
+			</header>
+			<div role="main" class="ui-content">
+				Hello, world!
+			</div>
+		</div>
+
+		<!-- config -->
+		<div data-role="page" id="config">
+			<header data-role="header" data-position="fixed">
+				<span class="menu"></span>
+				<span class="icon done right"></span>
+				<h1>Configurações</h1>
+			</header>
+			<div role="main" class="ui-content">
+				Hello, world!
+			</div>
+		</div>
+
+		<!-- about -->
+		<div data-role="page" id="about">
+			<header data-role="header" data-position="fixed">
+				<span class="menu"></span>
+				<h1>Sobre</h1>
+			</header>
+			<div role="main" class="ui-content">
+				Hello, world!
+			</div>
+		</div>
+
+		<script type="text/javascript" src="js/app.js"></script>
 	</body>
 </html>
