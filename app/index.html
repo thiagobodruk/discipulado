@@ -4,58 +4,35 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<script type="text/javascript" src="js/jquery.min.js"></script>
-		<script type="text/javascript" src="js/jquery-mobile.min.js"></script>
 		<link rel="stylesheet" href="css/style.css">
-		<link rel="stylesheet" href="css/jquery-mobile.min.css">
+		<link rel="shortcut icon" href="img/logo.png">
+		<script type="text/javascript" src="js/app.js"></script>
 		<title>Discipulado</title>
 	</head>
 	<body>
 
-		<!-- menu -->
-		<div data-role="panel" id="menu" data-display="overlay" class="ui-panel-closed">
-			<div class="cover"></div>
-			<ul>
-				<li class="active"><a href="#home"><span class="icon book"></span>Minhas Apostilas</a></li>
-				<li><a href="#config"><span class="icon build"></span>Configurações</a></li>
-				<li><a href="#about"><span class="icon help"></span>Sobre</a></li>
-			</ul>
-		</div>
 
-		<!-- home -->
-		<div data-role="page" id="home">
-			<header data-role="header" data-position="fixed">
-				<span class="menu"></span>
-				<span class="icon refresh right"></span>
-				<h1>Minhas Apostilas</h1>
-			</header>
-			<div role="main" class="ui-content">
-				Hello, world!
+		<div id="outer">
+			<div id="menu">
+				<div class="cover"></div>
+				<ul>
+					<li class="active"><span class="icon book"></span>Minhas Apostilas</li>
+					<li><span class="icon build"></span>Configurações</li>
+					<li><span class="icon help"></span>Sobre</li>
+				</ul>
 			</div>
-		</div>
-
-		<!-- config -->
-		<div data-role="page" id="config">
-			<header data-role="header" data-position="fixed">
-				<span class="menu"></span>
-				<span class="icon done right"></span>
-				<h1>Configurações</h1>
+			<header>
+				<a href="#" class="menu"></a>
+				<a href="#" class="icon refresh right"></a>
+				<h1>Title</h1>
+				<div class="clear"></div>
 			</header>
-			<div role="main" class="ui-content">
+			<article>
 				Hello, world!
-			</div>
+			</article>
+
 		</div>
 
-		<!-- about -->
-		<div data-role="page" id="about">
-			<header data-role="header" data-position="fixed">
-				<span class="menu"></span>
-				<h1>Sobre</h1>
-			</header>
-			<div role="main" class="ui-content">
-				Hello, world!
-			</div>
-		</div>
 
-		<script type="text/javascript" src="js/app.js"></script>
 	</body>
 </html>
