@@ -1,6 +1,6 @@
 /* General */
 *{
-	font-family: sans-serif;
+	font-family: Roboto, sans-serif;
 }
 html{
 	touch-action: manipulation;
@@ -21,6 +21,22 @@ body{
 }
 .clear{
 	clear: both;
+}
+
+/* Fonts */
+@font-face{
+	font-family: 'Roboto';
+	src: url(../font/roboto/Roboto-Regular.ttf);
+}
+@font-face{
+	font-family: 'Roboto';
+	src: url(../font/roboto/Roboto-Bold.ttf);
+	font-weight: bold;
+}
+@font-face{
+	font-family: 'Roboto';
+	src: url(../font/roboto/Roboto-Light.ttf);
+	font-weight: lighter;
 }
 
 /* Structure */
@@ -104,6 +120,10 @@ header .right{
 }
 #menu ul li.active .icon{
 	background: #000 !important;
+}
+#menu ul li a{
+	display: inline-block;
+	width: 100%;
 }
 #menu a, #menu a:visited{
 	color: #000 !important;
