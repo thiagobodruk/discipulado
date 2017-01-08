@@ -50,13 +50,5 @@ $.extend(Book.prototype, {
 	setChapter : function(n){
 		this.loadChapter(n);
 		return this.currentChapter = n;
-	},
-	loadTo : function(target){
-		$(target).html(this.content);
-		return this;
-	},
-	loadChapter : function(n){
-		$(".article").hide();
-		$(".article").eq(n).show();
 	}
 });
