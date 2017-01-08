@@ -1,0 +1,24 @@
+[
+	{
+		"name" : "O propósito eterno de Deus",
+		"cover" : "img/book1.png",
+		"src" : "books/book1.html",
+		"chapters" : [
+			{"name": "Capitulo 1"},
+			{"name": "Capitulo 2"},
+			{"name": "Capitulo 3"}
+		]
+	},
+	{
+		"name" : "A vida e obra de Jesus",
+		"cover" : "img/book2.png",
+		"src" : "books/book2.html",
+		"chapters" : [
+			{"name": "Capitulo 1"},
+			{"name": "Capitulo 2"},
+			{"name": "Capitulo 3"},
+			{"name": "Capitulo 4"},
+			{"name": "Capitulo 5"}
+		]
+	}
+]

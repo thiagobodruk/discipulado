@@ -2,6 +2,9 @@
 *{
 	font-family: sans-serif;
 }
+html{
+	touch-action: manipulation;
+}
 html, body{
 	height: 100% !important;
 	min-height: 100% !important;
@@ -35,6 +38,7 @@ header{
 	position: fixed;
 	top: 0;
 	left: 0;
+	padding: 5px 0;
 	background: #F44336 !important;
 	color: #FFF !important;
 	text-shadow: none !important;
@@ -126,7 +130,7 @@ header .right{
       rgba(0, 0, 0, 0.6), 
       rgba(0, 0, 0, 0.6)
     ), url(../img/bible-hand.jpeg) center center no-repeat;
-	background-size: auto 200px;
+	background-size: auto 250px;
 }
 #menu .cover:before{
 	position: relative;
