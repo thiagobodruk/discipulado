@@ -1,13 +1,13 @@
 /* General */
 *{
 	font-family: Roboto, sans-serif;
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 html{
 	touch-action: manipulation;
 }
 html, body{
-	height: 100% !important;
-	min-height: 100% !important;
+
 }
 body{
 	padding: 0;
@@ -44,8 +44,6 @@ body{
 	position: absolute;
 	top: 0;
 	left: 0;
-	height: 100% !important;
-	min-height: 100% !important;
 	width: 100%;
 }
 
@@ -83,6 +81,11 @@ header .right{
 	margin-top: 50px;
 	padding: 1.3em;
 }
+#main a, #main a:visited{
+	color: #000;
+	font-weight: bold;
+	text-decoration: none;
+}
 
 /* Menu */
 #menu{
@@ -113,10 +116,12 @@ header .right{
 	list-style: none;
 }
 #menu ul li{
-	padding: 15px 20px;
+	padding: 10px 20px 15px;
+	font-weight: bold;
 }
 #menu ul li.active{
 	background: #EEE;
+	color: #000;
 }
 #menu ul li.active .icon{
 	background: #000 !important;
@@ -126,7 +131,7 @@ header .right{
 	width: 100%;
 }
 #menu a, #menu a:visited{
-	color: #000 !important;
+	color: #333 !important;
 	text-decoration: none;
 }
 #menu .icon{
@@ -225,11 +230,40 @@ header .right{
 	-webkit-mask: url(../img/ic-done.svg);
 	mask: url(../img/ic-done.svg);
 }
+.icon.dashboard{
+	-webkit-mask: url(../img/ic-dashboard.svg);
+	mask: url(../img/ic-dashboard.svg);
+}
+.icon.feedback{
+	-webkit-mask: url(../img/ic-feedback.svg);
+	mask: url(../img/ic-feedback.svg);
+}
+.icon.settings{
+	-webkit-mask: url(../img/ic-settings.svg);
+	mask: url(../img/ic-settings.svg);
+}
 .icon.black{
 	background-color: #000;
 }
 
-/* Body */
-
+/* Books */
+.book{
+	margin: 0 0 15px;
+	border-radius: 5px;
+	overflow: hidden !important;
+	box-shadow: 0px 0px 5px rgba(0,0,0,0.25);
+}
+.book:last-child{
+	margin: 0 !important;
+}
+.book img.cover{
+	width: 100%;
+}
+.book h3{
+	margin: 0;
+	padding: 10px 15px;
+	color: #333;
+	font-size: 1em;
+}
 
 /* Inputs */

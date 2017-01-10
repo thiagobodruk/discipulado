@@ -1,24 +1,9 @@
-var Books = function(){
+var Books = function(){ 
 	this.collection = [];
 	this.currentBook = null;
 }
 $.extend(Books.prototype, {
 
-	loadBooks : function(){
-		var self = this;
-		$.ajax({
-			url : "books.json",
-			dataType : "json",
-			success : function(d){
-				for(i in d){
-					self.collection.push(new Book(d[i].name, d[i].cover, d[i].chapters, d[i].src));
-				}
-			},
-			error : function(){
-				return false;
-			}
-		});
-	},
 	setBook : function(name, cover, chapters, src){
 		this.collection.push(new Book(name, cover, chapters, src));
 	},
@@ -28,7 +13,6 @@ $.extend(Books.prototype, {
 	setCurrent : function(n){
 		return this.currentBook = this.collection[n];
 	}
-
 });
 
 var Book = function(name, cover, chapters, src){

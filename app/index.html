@@ -13,14 +13,14 @@
 	</head>
 	<body>
 
-
 		<div id="outer">
 			<nav id="menu">
 				<div class="cover"></div>
 				<ul>
-					<li class="active"><a href="#home"><span class="icon book"></span>Minhas Apostilas</a></li>
-					<li><a href="#config"><span class="icon build"></span>Configurações</a></li>
-					<li><a href="#help"><span class="icon help"></span>Sobre</a></li>
+					<li class="active"><a href="#home"><span class="icon dashboard"></span>Home</a></li>
+					<li><a href="#library"><span class="icon book"></span>Minhas Apostilas</a></li>
+					<li><a href="#settings"><span class="icon settings"></span>Configurações</a></li>
+					<li><a href="#about"><span class="icon feedback"></span>Sobre</a></li>
 				</ul>
 			</nav>
 			<header>
@@ -29,7 +29,8 @@
 				<div class="clear"></div>
 			</header>
 			<div id="main">
-				<ul class="home">
+				<div id="home" title="Discipulado"></div>
+				<ul id="library" title="Minhas Apostilas">
 					<li><a href="books/book1.html">Book1</a>
 						<ul>
 							<li><a href="books/book1.html#chapter1">Book1: Chapter 1</a></li>
@@ -47,6 +48,8 @@
 						</ul>
 					</li>
 				</ul>
+				<div id="settings" title="Configurações">Settings</div>
+				<div id="about" title="Sobre">About</div>
 				<div id="book"></div>
 			</div>
 		</div>

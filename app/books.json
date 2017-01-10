@@ -20,5 +20,16 @@
 			{"name": "Capitulo 4"},
 			{"name": "Capitulo 5"}
 		]
+	},
+	{
+		"name" : "Primeiros passos",
+		"cover" : "img/book3.png",
+		"src" : "books/book3.html",
+		"chapters" : [
+			{"name": "Capitulo 1"},
+			{"name": "Capitulo 2"},
+			{"name": "Capitulo 3"},
+			{"name": "Capitulo 4"}
+		]
 	}
 ]

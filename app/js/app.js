@@ -1,8 +1,12 @@
 var App = function(){
-	this.menuState = false;
+	this.pages = new Pages(this);
+	this.books = new Books(this);
+
 	this.setMenu();
+	this.loadBooks();
 	this.setLinks();
-	books.loadBooks();
+	this.closePage();
+	this.openPage('#home');
 }
 	
 $.extend(App.prototype, {
@@ -11,16 +15,17 @@ $.extend(App.prototype, {
 		$("#menu li a").click(function(){
 			$("#menu li").removeClass("active");
 			$(this).parent().addClass("active");
+			self.bs.view.toggleClose();
 		});
 		$("<div/>").attr("id", "black").appendTo("#outer");
-		$(".menu").add("#black").bigSlide({
+		this.bs = $(".menu").add("#black").bigSlide({
 			afterOpen : function(){
 				$("#black").fadeIn();
 			},
 			afterClose : function(){
 				$("#black").fadeOut();	
 			}
-		});
+		}).bigSlideAPI;
 	},
 	setLinks : function(){
 		var self = this;
@@ -28,14 +33,22 @@ $.extend(App.prototype, {
 	    	e.preventDefault();
 	    });
 	    $("a").not("icon").not(".menu").not("#menu a").on("click", function() {
+	    	console.log(this);
         	self.openBook(this.href);
 	    });
+	    $("#home").on("click", ".book", function(){
+	    	self.openBook($(this).attr("href"));
+	    });
 	    $("#menu a").on("click", function(){
-	    	console.log(this.href);
+	    	self.openPage(this.href);
 	    });
 	},
-	openPage : function(){
-		
+	openPage : function(href){
+		this.closePage();
+		this.closeBook();
+		var id = href.split("#")[1];
+		$("#main #" + id).show();
+		console.log(id);
 	},
 	closePage : function(id){
 		if(id){
@@ -63,10 +76,24 @@ $.extend(App.prototype, {
 	paginate : function(chapter){
 		this.closeBook();
 		$("#book").children(chapter).show();
+	},
+	loadBooks : function(){
+		var self = this;
+		$.ajax({
+			url : "books.json",
+			dataType : "json",
+			success : function(d){
+				for(i in d){
+					self.books.collection.push(new Book(d[i].name, d[i].cover, d[i].chapters, d[i].src));
+				}
+				self.pages.home(self.books.collection);
+			},
+			error : function(){
+				return false;
+			}
+		});
 	}
 
 });
 
-var pages = new Pages();
-var books = new Books();
 var app = new App();
