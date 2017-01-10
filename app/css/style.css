@@ -246,7 +246,7 @@ header .right{
 	background-color: #000;
 }
 
-/* Books */
+/* Books Gallery */
 .book{
 	margin: 0 0 15px;
 	border-radius: 5px;
@@ -259,11 +259,29 @@ header .right{
 .book img.cover{
 	width: 100%;
 }
+.book .description{
+	padding: 10px 20px;
+}
 .book h3{
 	margin: 0;
-	padding: 10px 15px;
+	padding: 0;
 	color: #333;
-	font-size: 1em;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+.book p{
+	margin: 5px 0;
+	font-size: 0.9em;
+}
+
+/* Book */
+#book{
+	padding: 2em;
+	line-height: 2em;
+}
+#book h3{
+	font-size: 2em;
+	font-weight: lighter;
 }
 
 /* Inputs */

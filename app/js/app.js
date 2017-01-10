@@ -6,6 +6,7 @@ var App = function(){
 	this.loadBooks();
 	this.setLinks();
 	this.closePage();
+	this.closeBook();
 	this.openPage('#home');
 }
 	
@@ -32,12 +33,10 @@ $.extend(App.prototype, {
 	    $("a").on("click", function(e){
 	    	e.preventDefault();
 	    });
-	    $("a").not("icon").not(".menu").not("#menu a").on("click", function() {
-	    	console.log(this);
-        	self.openBook(this.href);
-	    });
+
 	    $("#home").on("click", ".book", function(){
-	    	self.openBook($(this).attr("href"));
+	    	self.books.setCurrent($(this).attr("book"));
+	    	self.openBook(self.books.currentBook.src);
 	    });
 	    $("#menu a").on("click", function(){
 	    	self.openPage(this.href);
@@ -59,6 +58,11 @@ $.extend(App.prototype, {
 	},
 	openBook : function(href, chapter){
         var self = this;
+		if(self.books.getChapter()){
+			//
+		}else{
+			self.books.setChapter();
+		}
         if(chapter){
         	chapter = "#chapter" + chapter;
         }else{
@@ -67,14 +71,16 @@ $.extend(App.prototype, {
         $("#book").load(href, function(){
         	self.closePage();
         	self.paginate(chapter);
+        	//$("header").text(self.books.currentBook);
         });
-        console.log(chapter);
 	},
 	closeBook : function(){
+		$("#book").hide();
 		$("#book").children().hide();
 	},
 	paginate : function(chapter){
 		this.closeBook();
+		$("#book").show();
 		$("#book").children(chapter).show();
 	},
 	loadBooks : function(){
@@ -84,7 +90,7 @@ $.extend(App.prototype, {
 			dataType : "json",
 			success : function(d){
 				for(i in d){
-					self.books.collection.push(new Book(d[i].name, d[i].cover, d[i].chapters, d[i].src));
+					self.books.collection.push(new Book(d[i].name, d[i].cover, d[i].chapters, d[i].src, d[i].info));
 				}
 				self.pages.home(self.books.collection);
 			},
