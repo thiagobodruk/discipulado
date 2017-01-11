@@ -1,8 +1,12 @@
 var App = function(){
-	this.pages = new Pages(this);
-	this.books = new Books(this);
+	this.pages = new Pages();
+	this.books = new Books();
+	this.menuState = false;
+	this.indexState = false;
 
 	this.setMenu();
+	this.setIndex();
+	this.setBlack();
 	this.loadBooks();
 	this.setLinks();
 	this.closePage();
@@ -12,22 +16,70 @@ var App = function(){
 }
 	
 $.extend(App.prototype, {
+	toggleIndex : function(){
+		if(this.indexState){
+			this.indexState = false;
+			$("#index").velocity({
+				right : "-100%"
+			});
+			$("#black").hide();
+		}else{
+			this.indexState = true;
+			$("#index").velocity({
+				right : "0px"
+			});
+			$("#black").fadeIn();
+		}
+	},
+	setIndex : function(){
+		var self = this;
+		// Set index
+	    $("#index-toggle").add("#index .close").on("click", function(){
+	    	self.toggleIndex();
+	    });
+	    $("#index").on("click", "li", function(){
+	    	self.openBook(self.books.currentBook.src, parseInt($(this).attr("chapter")) + 1);
+	    	self.toggleIndex();
+	    });
+	},
+	toggleMenu : function(){
+		if(this.menuState){
+			this.menuState = false;
+			$("#menu").velocity({
+				left : "-100%"
+			});
+			$("#black").hide();
+		}else{
+			this.menuState = true;
+			$("#menu").velocity({
+				left : "0"
+			});
+			$("#black").fadeIn();
+		}
+	},
 	setMenu : function(){
 		var self = this;
 		$("#menu li a").click(function(){
 			$("#menu li").removeClass("active");
 			$(this).parent().addClass("active");
-			self.bs.view.toggleClose();
+			self.toggleMenu();
 		});
 		$("<div/>").attr("id", "black").appendTo("#outer");
-		this.bs = $(".menu").add("#black").bigSlide({
-			afterOpen : function(){
-				$("#black").fadeIn();
-			},
-			afterClose : function(){
-				$("#black").fadeOut();	
+		
+		$(".menu").on("click", function(){
+			self.toggleMenu();
+		});
+	},
+	setBlack : function(){
+		var self = this;
+		$("#black").on("click", function(){
+			if(self.menuState){
+				self.toggleMenu();
 			}
-		}).bigSlideAPI;
+			if(self.indexState){
+				self.toggleIndex();
+			}
+		});
 	},
 	setLinks : function(){
 		var self = this;
@@ -52,7 +104,7 @@ $.extend(App.prototype, {
 	openPage : function(href){
 		this.closePage();
 		this.closeBook();
-		$("#back").add("#index").hide();
+		$("#back").add("#index-toggle").hide();
 		$("#menu-toggle").show();
 
 		var id = href.split("#")[1];
@@ -74,7 +126,7 @@ $.extend(App.prototype, {
 		if(id){
 			$("#main #" + id).hide();
 		}else{
-			$("#main").children().not("#book").hide();
+			$("#main").children().not("#book").not("#index").hide();
 		}
 	},
 	openBook : function(href, chapter){
@@ -82,7 +134,7 @@ $.extend(App.prototype, {
         
         // Set header icons
         $("#menu-toggle").hide();
-        $("#back").add("#index").show();
+        $("#back").add("#index-toggle").show();
 
         // Define the chapter id
         if(chapter){
@@ -123,6 +175,17 @@ $.extend(App.prototype, {
 
         // Update the location
         window.location = "#book";
+
+        // Populate index
+        $("#index ul").empty();
+        for(i in this.books.currentBook.chapters){
+        	var t = this.books.currentBook.chapters[i].name;
+        	$("<li />").text(t).attr("chapter", i).appendTo("#index ul");
+        }
+        setTimeout(function(){
+			window.scrollTo(0, 0);
+		}, 1);
+
 	},
 	closeBook : function(){
 		$("#book").hide();

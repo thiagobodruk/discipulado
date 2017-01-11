@@ -59,6 +59,7 @@ header{
 	border: none !important;
 	box-shadow: 0px 0px 10px rgba(0,0,0,0.25);
 	width: 100%;
+	z-index: 998;
 }
 header.light{
 	background: #FFF !important;
@@ -86,7 +87,7 @@ header .left, header .menu{
 header .right{
 	right: 20px;
 }
-header #back, header #index{
+header #back, header #index-toggle{
 	display: none;
 }
 /* Footer */
@@ -167,7 +168,7 @@ footer #next{
 	width: 100%;
 	height: 100%;
 	background: rgba(0,0,0,0.5);
-	z-index: 900;
+	z-index: 998;
 	display: none;
 	content: "";
 }
@@ -325,6 +326,51 @@ footer #next{
 	font-size: 2em;
 	font-weight: lighter;
 	margin: 0 0 10px;
+}
+/* Index */
+#index{
+	position: fixed;
+	right: -100%;
+	top: 0;
+	width: 80%;
+	max-width: 300px;
+	height: 100%;
+	background: #FFF;
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.35);
+	z-index: 999;
+}
+#index h3{
+	margin: 20px 30px;
+	font-weight: lighter;
+	font-size: 1em;
+	color: #333;
+	padding: 5px 0;
+	margin: 0.67em 2em;
+}
+#index .close{
+	position: absolute;
+	right: 20px;
+	top: 0.67em;
+	height: 24px;
+	width: 24px;
+	background: #333;
+	-webkit-mask: url(../img/ic-clear.svg);
+	mask: url(../img/ic-clear.svg);
+	-webkit-mask-size: cover;
+	mask-size: cover;
+	content: "";
+	z-index: 999;
+}
+#index ul{
+	margin: 0 2em;
+	padding: 0;
+	list-style: none;
+}
+#index ul li{
+	padding: 10px 0;
+	font-weight: bold;
+	font-size: 1em;
+	color: #333;
 }
 
 /* Toast */
