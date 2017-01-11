@@ -30,6 +30,7 @@ var Book = function(name, cover, chapters, src, info){
 	this.content = null;
 	this.info = info;
 	this.currentChapter = null;
+	this.length = this.chapters.length;
 	this.setContent();
 }
 $.extend(Book.prototype, {
@@ -38,9 +39,5 @@ $.extend(Book.prototype, {
 		$.get(self.src, function(data){
 			self.content = data;
 		});
-	},
-	setChapter : function(n){
-		this.loadChapter(n);
-		return this.currentChapter = n;
 	}
 });

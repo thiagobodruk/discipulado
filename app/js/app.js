@@ -42,6 +42,12 @@ $.extend(App.prototype, {
 	    $("#menu a").add("#back").on("click", function(){
 	    	self.openPage(this.href);
 	    });
+	    $("#previous").on("click", function(){
+	    	self.previousChapter();
+	    });
+	    $("#next").on("click", function(){
+	    	self.nextChapter();
+	    });
 	},
 	openPage : function(href){
 		this.closePage();
@@ -96,8 +102,24 @@ $.extend(App.prototype, {
         $("#book").load(href, function(){
         	self.closePage();
         	self.paginate(chapter);
-        	//$("header").text(self.books.currentBook);
         });
+
+        // Set currentChapter
+        var c = parseInt(chapter.split("#chapter")[1]);
+        this.books.currentBook.currentChapter = c;
+        if(this.books.currentBook.currentChapter){
+        	chapter = "#chapter" + this.books.currentBook.currentChapter;
+        }
+        if(c < 2){
+        	$("#previous").hide();
+        }else{
+        	$("#previous").show();
+        }
+        if(c >= this.books.currentBook.length){
+        	$("#next").hide();
+        }else{
+        	$("#next").show();
+        }
 
         // Update the location
         window.location = "#book";
@@ -141,6 +163,16 @@ $.extend(App.prototype, {
 	},
 	toast : function(message){
 		$("<div />").text(message).addClass("toast").fadeIn(400).delay(3000).fadeOut(400).appendTo("#outer");
+	},
+	previousChapter : function(){
+		if(this.books.currentBook.currentChapter > 0){
+			this.openBook(this.books.currentBook.src, this.books.currentBook.currentChapter - 1);	
+		}
+	},
+	nextChapter : function(){
+		if(this.books.currentBook.currentChapter < this.books.currentBook.length){
+			this.openBook(this.books.currentBook.src, this.books.currentBook.currentChapter + 1);	
+		}
 	}
 
 });
