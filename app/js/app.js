@@ -8,6 +8,7 @@ var App = function(){
 	this.closePage();
 	this.closeBook();
 	this.openPage('#home');
+	this.setScroll();
 }
 	
 $.extend(App.prototype, {
@@ -31,23 +32,37 @@ $.extend(App.prototype, {
 	setLinks : function(){
 		var self = this;
 	    $("a").on("click", function(e){
-	    	e.preventDefault();
+	    	//e.preventDefault();
 	    });
 
 	    $("#home").on("click", ".book", function(){
 	    	self.books.setCurrent($(this).attr("book"));
 	    	self.openBook(self.books.currentBook.src);
 	    });
-	    $("#menu a").on("click", function(){
+	    $("#menu a").add("#back").on("click", function(){
 	    	self.openPage(this.href);
 	    });
 	},
 	openPage : function(href){
 		this.closePage();
 		this.closeBook();
+		$("#back").add("#index").hide();
+		$("#menu-toggle").show();
+
 		var id = href.split("#")[1];
+
+		// Set the page's title
+		$("header").removeClass("light");
+		$("header h1").text($("#" + id).attr("title"));
+
+		// Set the page's footer
+		$("footer").hide();
+		
+		// Fix the windows scroll
 		$("#main #" + id).show();
-		console.log(id);
+		setTimeout(function(){
+			window.scrollTo(0, 0);
+		}, 1);
 	},
 	closePage : function(id){
 		if(id){
@@ -58,21 +73,34 @@ $.extend(App.prototype, {
 	},
 	openBook : function(href, chapter){
         var self = this;
-		if(self.books.getChapter()){
-			//
-		}else{
-			self.books.setChapter();
-		}
+        
+        // Set header icons
+        $("#menu-toggle").hide();
+        $("#back").add("#index").show();
+
+        // Define the chapter id
         if(chapter){
         	chapter = "#chapter" + chapter;
         }else{
         	chapter = (href.split("#")[1]) ? "#"+href.split("#")[1] : "#chapter1";
         }
+
+        // Set the page's title
+        $("header h1").text(this.books.currentBook.name);
+        $("header").addClass("light");
+
+        // Set the page's footer
+		$("footer").show();
+
+        // Load the book content
         $("#book").load(href, function(){
         	self.closePage();
         	self.paginate(chapter);
         	//$("header").text(self.books.currentBook);
         });
+
+        // Update the location
+        window.location = "#book";
 	},
 	closeBook : function(){
 		$("#book").hide();
@@ -98,6 +126,21 @@ $.extend(App.prototype, {
 				return false;
 			}
 		});
+	},
+	setScroll : function(){
+		var lastScrollTop = 0;
+		$(window).scroll(function(event){
+			var st = $(this).scrollTop();
+			if (st > lastScrollTop){
+				$("header.light").hide();
+			}else{
+				$("header.light").show();
+			}
+			lastScrollTop = st;
+		});
+	},
+	toast : function(message){
+		$("<div />").text(message).addClass("toast").fadeIn(400).delay(3000).fadeOut(400).appendTo("#outer");
 	}
 
 });

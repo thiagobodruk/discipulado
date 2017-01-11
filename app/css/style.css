@@ -60,12 +60,23 @@ header{
 	box-shadow: 0px 0px 10px rgba(0,0,0,0.25);
 	width: 100%;
 }
+header.light{
+	background: #FFF !important;
+}
+header.light h1{
+	font-size: 1em !important;
+	font-weight: lighter !important;
+	color: #333 !important;
+}
+header.light .icon{
+	background: #333 !important;
+}
 header h1{
 	display: inline-block !important;
 	position: relative;
 	padding: 0 !important;
 	margin-left: 60px;
-	font-size: 1.2em;
+	font-size: 1em;
 	font-weight: 750;
 	letter-spacing: 0.05em;
 }
@@ -74,6 +85,56 @@ header .left, header .menu{
 }
 header .right{
 	right: 20px;
+}
+header #back, header #index{
+	display: none;
+}
+/* Footer */
+footer{
+	display: none;
+	position: fixed;
+	bottom: 20px;
+	left: 0;
+	width: 100%;
+}
+footer #next, footer #previous{
+	position: relative;
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	border-radius: 100%;
+	box-shadow: 0 0 10px rgba(0,0,0,0.25);
+	background: #FFF;
+}
+footer #next:before, footer #previous:before{
+	position: absolute;
+	width: 36px;
+	height: 36px;
+	top: 50%;
+	left: 50%;
+	transform: translate3d(-50%, -50%, 0);
+	background: #333;
+	content: "";
+}
+footer #previous:before{
+	-webkit-mask: url(../img/ic-left.svg);
+	mask: url(../img/ic-left.svg);
+	-webkit-mask-size: 36px 36px;
+	mask-size: 36px 36px;
+}
+footer #next:before{
+	-webkit-mask: url(../img/ic-right.svg);
+	mask: url(../img/ic-right.svg);
+	-webkit-mask-size: 36px 36px;
+	mask-size: 36px 36px;
+}
+footer #previous{
+	float: left;
+	margin-left: 30px;
+}
+footer #next{
+	float: right;
+	margin-right: 30px;
 }
 
 /* Main */
@@ -202,48 +263,29 @@ header .right{
 	height: 14px !important;
 	width: 18px !important;
 }
-.icon.refresh{
-	-webkit-mask: url(../img/ic-reload.svg);
-	mask: url(../img/ic-reload.svg);
-}
-.icon.book{
-	-webkit-mask: url(../img/ic-book.svg);
-	mask: url(../img/ic-book.svg);
-}
-.icon.build{
-	-webkit-mask: url(../img/ic-build.svg);
-	mask: url(../img/ic-build.svg);
-}
-.icon.help{
-	-webkit-mask: url(../img/ic-help.svg);
-	mask: url(../img/ic-help.svg);
-}
-.icon.offline-pin{
-	-webkit-mask: url(../img/ic-offline-pin.svg);
-	mask: url(../img/ic-offline-pin.svg);
-}
-.icon.download{
-	-webkit-mask: url(../img/ic-download.svg);
-	mask: url(../img/ic-download.svg);
-}
-.icon.done{
-	-webkit-mask: url(../img/ic-done.svg);
-	mask: url(../img/ic-done.svg);
-}
-.icon.dashboard{
-	-webkit-mask: url(../img/ic-dashboard.svg);
-	mask: url(../img/ic-dashboard.svg);
-}
-.icon.feedback{
-	-webkit-mask: url(../img/ic-feedback.svg);
-	mask: url(../img/ic-feedback.svg);
-}
-.icon.settings{
-	-webkit-mask: url(../img/ic-settings.svg);
-	mask: url(../img/ic-settings.svg);
-}
-.icon.black{
+.icon.arrow-down{-webkit-mask: url(../img/ic-down.svg);mask: url(../img/ic-down.svg);}
+.icon.arrow-left{-webkit-mask: url(../img/ic-left.svg);mask: url(../img/ic-left.svg);}
+.icon.arrow-right{-webkit-mask: url(../img/ic-right.svg);mask: url(../img/ic-right.svg);}
+.icon.arrow-up{-webkit-mask: url(../img/ic-up.svg);mask: url(../img/ic-up.svg);}
+.icon.backspace{-webkit-mask: url(../img/ic-backspace.svg);mask: url(../img/ic-backspace.svg);}
+.icon.book{-webkit-mask: url(../img/ic-book.svg);mask: url(../img/ic-book.svg);}
+.icon.build{-webkit-mask: url(../img/ic-build.svg);mask: url(../img/ic-build.svg);}
+.icon.clear{-webkit-mask: url(../img/ic-clear.svg);mask: url(../img/ic-clear.svg);}
+.icon.dashboard{-webkit-mask: url(../img/ic-dashboard.svg);mask: url(../img/ic-dashboard.svg);}
+.icon.done{-webkit-mask: url(../img/ic-done.svg);mask: url(../img/ic-done.svg);}
+.icon.download{-webkit-mask: url(../img/ic-download.svg);mask: url(../img/ic-download.svg);}
+.icon.feedback{-webkit-mask: url(../img/ic-feedback.svg);mask: url(../img/ic-feedback.svg);}
+.icon.help{-webkit-mask: url(../img/ic-help.svg);mask: url(../img/ic-help.svg);}
+.icon.list{-webkit-mask: url(../img/ic-list.svg);mask: url(../img/ic-list.svg);}
+.icon.menu{-webkit-mask: url(../img/ic-menu.svg);mask: url(../img/ic-menu.svg);}
+.icon.offline-pin{-webkit-mask: url(../img/ic-offline-pin.svg);mask: url(../img/ic-offline-pin.svg);}
+.icon.reload{-webkit-mask: url(../img/ic-reload.svg);mask: url(../img/ic-reload.svg);}
+.icon.settings{-webkit-mask: url(../img/ic-settings.svg);mask: url(../img/ic-settings.svg);}
+.icon.dark{
 	background-color: #000;
+}
+.icon.light{
+	background-color: #FFF;
 }
 
 /* Books Gallery */
@@ -282,6 +324,26 @@ header .right{
 #book h3{
 	font-size: 2em;
 	font-weight: lighter;
+	margin: 0 0 10px;
+}
+
+/* Toast */
+.toast {
+	position: fixed;
+    width: 200px;
+    height: 20px;
+    height: auto;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.9);
+    color: #FFF;
+    font-size: 1.2em;
+    padding: 10px;
+    text-align: center;
+    border-radius: 50px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.25);
 }
 
 /* Inputs */
+
