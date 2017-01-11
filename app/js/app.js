@@ -12,6 +12,7 @@ var App = function(){
 	this.closePage();
 	this.closeBook();
 	this.openPage('#home');
+	//this.openPage('#settings');
 	this.setScroll();
 }
 	

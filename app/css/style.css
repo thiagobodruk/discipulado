@@ -70,7 +70,7 @@ header.light h1{
 	color: #333 !important;
 }
 header.light .icon{
-	background: #333 !important;
+	background: #CCC !important;
 }
 header h1{
 	display: inline-block !important;
@@ -254,6 +254,8 @@ footer #next{
 	top: 50%;
 	height: 24px;
 	width: 24px;
+}
+.icon{
 	background-color: #000;
 }
 .menu{
@@ -263,6 +265,7 @@ footer #next{
 	mask-size: cover;
 	height: 14px !important;
 	width: 18px !important;
+	background-color: #B71C1C !important;
 }
 .icon.arrow-down{-webkit-mask: url(../img/ic-down.svg);mask: url(../img/ic-down.svg);}
 .icon.arrow-left{-webkit-mask: url(../img/ic-left.svg);mask: url(../img/ic-left.svg);}
@@ -344,8 +347,8 @@ footer #next{
 	font-weight: lighter;
 	font-size: 1em;
 	color: #333;
-	padding: 5px 0;
-	margin: 0.67em 2em;
+	padding: 1em 2em;
+	margin: 0;
 }
 #index .close{
 	position: absolute;
@@ -353,7 +356,7 @@ footer #next{
 	top: 0.67em;
 	height: 24px;
 	width: 24px;
-	background: #333;
+	background: #CCC;
 	-webkit-mask: url(../img/ic-clear.svg);
 	mask: url(../img/ic-clear.svg);
 	-webkit-mask-size: cover;
@@ -392,4 +395,35 @@ footer #next{
 }
 
 /* Inputs */
+textarea, input, button {
+	outline: none;
+}
+input[type=text],input[type=number],input[type=password]{
+	display: block;
+	width: 100%;
+	padding: 0.7em 0;
+	margin: 0.7em 0;
+	border: none;
+	border-bottom: 1px solid #CCC;
+	font-size: 1em;
+}
+input[type=text]:focus,input[type=number]:focus,input[type=password]:focus{
+	border-bottom: 1px solid #00BAEA;	
+}
+button, input[type=button]{
+	display: block;
+	width: 100%;
+	padding: 1em;
+	margin: 0.7em 0;
+	background: #EEE;
+	border-radius: 2px;
+	border: none;
+	box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+	font-size: 1em;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+button:active{
+	background: #DDD;
+}
 
