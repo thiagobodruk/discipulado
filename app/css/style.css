@@ -330,6 +330,9 @@ footer #next{
 	font-weight: lighter;
 	margin: 0 0 10px;
 }
+#book blockquote{
+	margin: 1em 0;
+}
 /* Index */
 #index{
 	position: fixed;
@@ -370,9 +373,9 @@ footer #next{
 	list-style: none;
 }
 #index ul li{
-	padding: 10px 0;
+	padding: 5px 0;
 	font-weight: bold;
-	font-size: 1em;
+	font-size: 0.9em;
 	color: #333;
 }
 

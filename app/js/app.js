@@ -179,13 +179,17 @@ $.extend(App.prototype, {
 
         // Populate index
         $("#index ul").empty();
+
         for(i in this.books.currentBook.chapters){
         	var t = this.books.currentBook.chapters[i].name;
         	$("<li />").text(t).attr("chapter", i).appendTo("#index ul");
         }
+
         setTimeout(function(){
 			window.scrollTo(0, 0);
 		}, 1);
+
+		$(".verse").jVerse();
 
 	},
 	closeBook : function(){

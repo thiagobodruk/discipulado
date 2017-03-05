@@ -5,9 +5,15 @@
 		"src" : "books/book1.html",
 		"info" : "Qual é o propósito de Deus?",
 		"chapters" : [
-			{"name": "Capitulo 1"},
-			{"name": "Capitulo 2"},
-			{"name": "Capitulo 3"}
+			{"name" : "O Propósito Eterno de Deus"},
+			{"name" : "Um erro muito comum"},
+			{"name" : "Qual a intenção de Deus ao criar o homem?"},
+			{"name" : "Como o pecado interferiu?"},
+			{"name" : "A Queda do Homem"},
+			{"name" : "Deus desistiu do Seu Propósito?"},
+			{"name" : "A salvação é um meio e não um fim"},
+			{"name" : "Como se define o Propósito Eterno de Deus hoje?"},
+			{"name" : "Qual a nossa posição dentro deste Propósito?"}
 		]
 	},
 	{
