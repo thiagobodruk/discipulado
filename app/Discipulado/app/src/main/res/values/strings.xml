@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Discipulado</string>
+    <string name="action_settings">Settings</string>
+    <string name="url">http://discipulado.esy.es</string>
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <!--
+    <string name="banner_ad_unit_id">ca-app-pub-4422721417358840~9938633086</string>
+    -->
+</resources>
