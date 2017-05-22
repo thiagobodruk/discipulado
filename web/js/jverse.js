@@ -51,7 +51,7 @@
 					}
 
 					// console.log(obj);
-					console.log(this);
+					// console.log(this);
         			// $("<span />").text(obj.text).insertBefore(this);'
 
         		});
