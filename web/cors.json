@@ -1,0 +1,7 @@
+[
+  {
+    "origin": ["https://discipulado-7b14b.firebaseapp.com"],
+    "method": ["GET"],
+    "maxAgeSeconds": 3600
+  }
+]
